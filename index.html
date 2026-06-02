@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Памятка системного аналитика | Шпаргалка</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Памятка системного аналитика | Мобильная версия</title>
     <style>
         * {
             margin: 0;
@@ -16,33 +16,27 @@
             font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
             line-height: 1.45;
             color: #1a2c3e;
-            padding: 2rem 1.5rem;
+            padding: 1rem;
         }
 
-        /* контейнер */
         .container {
             max-width: 1300px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 1.75rem;
+            gap: 1.25rem;
         }
 
-        /* карточка секции */
         .card {
             background: #ffffff;
             border-radius: 1.25rem;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.05);
-            padding: 1.6rem 2rem;
+            padding: 1.2rem 1.2rem;
             transition: box-shadow 0.2s;
         }
 
-        .card:hover {
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-        }
-
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: -0.01em;
             background: linear-gradient(135deg, #1e466e, #2c5a8c);
@@ -50,43 +44,43 @@
             background-clip: text;
             color: transparent;
             margin-bottom: 0.25rem;
+            word-break: break-word;
         }
 
         .sub {
             color: #4a627a;
             border-left: 3px solid #2c7cb6;
             padding-left: 1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 400;
+            font-size: 0.95rem;
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
             border-bottom: 3px solid #dce5ec;
             display: inline-block;
-            letter-spacing: -0.2px;
             color: #1c4e6e;
+            word-break: break-word;
         }
 
         .section-number {
             background: #eef2fa;
             color: #1a6d9f;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            width: 2rem;
-            height: 2rem;
+            width: 1.8rem;
+            height: 1.8rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 40px;
-            margin-right: 0.65rem;
+            margin-right: 0.6rem;
         }
 
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
             margin: 1rem 0 0.5rem 0;
             color: #2c5a74;
@@ -95,7 +89,7 @@
         .two-columns {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.8rem 1.5rem;
+            gap: 0.8rem 1.2rem;
             margin-top: 0.5rem;
         }
 
@@ -104,14 +98,16 @@
         }
 
         .skill-list li, .checklist-list li, .insight-list li {
-            margin-bottom: 0.55rem;
+            margin-bottom: 0.65rem;
             display: flex;
             align-items: baseline;
             gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
         }
 
         .skill-list li strong {
-            min-width: 70px;
+            min-width: 80px;
             font-weight: 600;
             color: #1f6390;
         }
@@ -135,11 +131,18 @@
             margin-right: 0.6rem;
         }
 
+        /* Таблицы с горизонтальной прокруткой */
+        .overflow-auto {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 0.8rem 0;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1rem 0 0.5rem 0;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            min-width: 480px;
         }
 
         th {
@@ -147,7 +150,6 @@
             text-align: left;
             padding: 0.7rem 0.8rem;
             font-weight: 600;
-            border-radius: 12px 12px 0 0;
         }
 
         td {
@@ -158,28 +160,31 @@
         .mono {
             font-family: 'SF Mono', 'Menlo', monospace;
             background: #f4f7fc;
-            padding: 0.2rem 0.35rem;
+            padding: 0.2rem 0.4rem;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            word-break: break-word;
+            display: inline-block;
         }
 
         .formula {
             background: #f1f5f9;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 16px;
             font-family: monospace;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-align: center;
             display: inline-block;
             margin: 0.5rem 0;
         }
 
+        /* Матрица адаптивная */
         .matrix-grid {
             display: grid;
-            grid-template-columns: 100px 1fr 1fr;
-            gap: 8px;
+            grid-template-columns: auto 1fr 1fr;
+            gap: 0.5rem;
             margin: 1rem 0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .matrix-header {
@@ -199,11 +204,12 @@
 
         .badge {
             background: #eef2fa;
-            padding: 0.2rem 0.65rem;
+            padding: 0.2rem 0.7rem;
             border-radius: 40px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 500;
             display: inline-block;
+            margin: 0.2rem 0;
         }
 
         hr {
@@ -212,55 +218,93 @@
             border-top: 1px solid #e0eaf1;
         }
 
-        .overflow-auto {
-            overflow-x: auto;
-        }
-
-        @media (max-width: 760px) {
-            body {
-                padding: 1rem;
-            }
-            .card {
-                padding: 1.2rem;
-            }
-            .two-columns {
-                grid-template-columns: 1fr;
-                gap: 0.3rem;
-            }
-            h2 {
-                font-size: 1.4rem;
-            }
-            .matrix-grid {
-                grid-template-columns: 1fr;
-                gap: 6px;
-            }
-            .matrix-header {
-                display: none;
-            }
+        .small-note {
+            font-size: 0.8rem;
+            color: #4e6a7e;
+            margin-top: 0.4rem;
         }
 
         footer {
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #5b748b;
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px solid #cbdde9;
         }
-        .api-sub {
-            margin-top: 1rem;
+
+        /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+        @media (max-width: 760px) {
+            body {
+                padding: 0.75rem;
+            }
+            .card {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .matrix-grid {
+                grid-template-columns: 1fr;
+                gap: 0.4rem;
+            }
+            .matrix-header {
+                display: none;
+            }
+            .matrix-cell {
+                font-size: 0.85rem;
+                padding: 0.5rem;
+            }
+            .matrix-cell:before {
+                content: attr(data-label);
+                font-weight: 700;
+                display: block;
+                margin-bottom: 0.25rem;
+                color: #1f6390;
+            }
+            th, td {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            .skill-list li, .checklist-list li, .insight-list li {
+                font-size: 0.9rem;
+            }
+            .mono {
+                font-size: 0.8rem;
+                word-break: break-all;
+            }
+            /* Улучшаем таргет для пальцев */
+            a, .badge {
+                touch-action: manipulation;
+            }
         }
-        .small-note {
-            font-size: 0.85rem;
-            color: #4e6a7e;
-            margin-top: 0.4rem;
+
+        /* Для очень узких (iPhone SE) */
+        @media (max-width: 480px) {
+            .card {
+                padding: 0.9rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            .section-number {
+                width: 1.6rem;
+                height: 1.6rem;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <!-- заголовок -->
-    <div class="card" style="background: #ffffff; text-align: left;">
+    <div class="card">
         <h1>📋 ПАМЯТКА СИСТЕМНОГО АНАЛИТИКА</h1>
         <div class="sub">Системное мышление, требования, интеграции и документация — компактный справочник</div>
     </div>
@@ -268,91 +312,78 @@
     <!-- 1. Ключевые навыки -->
     <div class="card">
         <h2><span class="section-number">1</span> КЛЮЧЕВЫЕ НАВЫКИ</h2>
-        <div class="two-columns">
-            <ul class="skill-list">
-                <li><strong>📌 Сбор требований</strong> — интервью, анкеты, DOR</li>
-                <li><strong>📌 Моделирование</strong> — BPMN, UML, ERD, DFD</li>
-                <li><strong>📌 Документирование</strong> — ТЗ, User Story, AC</li>
-                <li><strong>📌 API & интеграции</strong> — REST, SOAP, OpenAPI</li>
-                <li><strong>📌 SQL и БД</strong> — проверка логики, выгрузки</li>
-                <li><strong>📌 Анализ рисков</strong> — приоритеты, компромиссы</li>
-                <li><strong>📌 Коммуникация</strong> — бизнес ↔ разработка</li>
-                <li><strong>📌 Прототипирование</strong> — Balsamiq, Figma, Miro</li>
+        <ul class="skill-list">
+            <li><strong>📌 Сбор требований</strong> — интервью, анкеты, DOR</li>
+            <li><strong>📌 Моделирование</strong> — BPMN, UML, ERD, DFD</li>
+            <li><strong>📌 Документирование</strong> — ТЗ, User Story, AC</li>
+            <li><strong>📌 API & интеграции</strong> — REST, SOAP, OpenAPI</li>
+            <li><strong>📌 SQL и БД</strong> — проверка логики, выгрузки</li>
+            <li><strong>📌 Анализ рисков</strong> — приоритеты, компромиссы</li>
+            <li><strong>📌 Коммуникация</strong> — бизнес ↔ разработка</li>
+            <li><strong>📌 Прототипирование</strong> — Balsamiq, Figma, Miro</li>
+        </ul>
+    </div>
+
+    <!-- 2. Требования -->
+    <div class="card">
+        <h2><span class="section-number">2</span> ТРЕБОВАНИЯ: ФОРМАТЫ & ПРИОРИТЕТЫ</h2>
+        <div>
+            <h3>📄 User Story</h3>
+            <div class="mono" style="display: block; margin-bottom: 0.5rem;">Как &lt;роль&gt;, я хочу &lt;действие&gt;, чтобы &lt;ценность&gt;</div>
+            <p class="small-note"><strong>Критерии приемки:</strong> Given... When... Then...</p>
+            <h3>📘 Use Case</h3>
+            <ul style="margin-left: 1.2rem;">
+                <li>Актер, пред/пост-условия</li>
+                <li>Основной / альтернативный поток</li>
+                <li>Исключения</li>
+            </ul>
+            <h3>🏷️ Типы требований</h3>
+            <ul>
+                <li>Бизнес (зачем)</li>
+                <li>Функциональные (что делает)</li>
+                <li>Нефункциональные (производительность, безопасность)</li>
+                <li>Ограничения (стек, бюджет)</li>
+            </ul>
+            <h3>🎯 MoSCoW</h3>
+            <ul>
+                <li><strong>M</strong> – Must have (критично)</li>
+                <li><strong>S</strong> – Should have (важно)</li>
+                <li><strong>C</strong> – Could have (можно позже)</li>
+                <li><strong>W</strong> – Won't have (исключено)</li>
             </ul>
         </div>
     </div>
 
-    <!-- 2. Шпаргалка по требованиям -->
-    <div class="card">
-        <h2><span class="section-number">2</span> ТРЕБОВАНИЯ: ФОРМАТЫ & ПРИОРИТЕТЫ</h2>
-        <div class="two-columns">
-            <div>
-                <h3>📄 User Story</h3>
-                <div class="mono" style="display: inline-block; padding: 0.5rem 0.8rem; background:#f4f9fe;">Как &lt;роль&gt;, я хочу &lt;действие&gt;, чтобы &lt;ценность&gt;</div>
-                <p class="small-note"><strong>Критерии приемки:</strong> Given... When... Then...</p>
-                <h3>📘 Use Case</h3>
-                <ul style="margin-left: 1.2rem;">
-                    <li>Актер, пред/пост-условия</li>
-                    <li>Основной / альтернативный поток</li>
-                    <li>Исключения</li>
-                </ul>
-            </div>
-            <div>
-                <h3>🏷️ Типы требований</h3>
-                <ul>
-                    <li>Бизнес (зачем)</li>
-                    <li>Функциональные (что делает)</li>
-                    <li>Нефункциональные (производительность, безопасность)</li>
-                    <li>Ограничения (стек, бюджет)</li>
-                </ul>
-                <h3>🎯 MoSCoW</h3>
-                <ul>
-                    <li><strong>M</strong> – Must have (критично)</li>
-                    <li><strong>S</strong> – Should have (важно)</li>
-                    <li><strong>C</strong> – Could have (можно позже)</li>
-                    <li><strong>W</strong> – Won't have (исключено)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. Основы BPMN -->
+    <!-- 3. BPMN -->
     <div class="card">
         <h2><span class="section-number">3</span> BPMN: БЫСТРЫЙ СПРАВОЧНИК</h2>
         <div class="overflow-auto">
             <table>
-                <thead><tr><th>Элемент</th><th>Обозначение</th><th>Назначение</th></tr>
-                </thead>
+                <thead><tr><th>Элемент</th><th>Назначение</th></tr></thead>
                 <tbody>
-                    <tr><td>⚪ Круг</td><td>Событие</td><td>Начало / конец процесса, промежуточные события</td></tr>
-                    <tr><td>📦 Прямоугольник с закруглениями</td><td>Задача (Task)</td><td>Действие или работа</td></tr>
-                    <tr><td>🔶 Ромб</td><td>Шлюз (Gateway)</td><td>Ветвление, объединение, параллель</td></tr>
-                    <tr><td>--- пунктир</td><td>Поток сообщений</td><td>Обмен между пулами</td></tr>
-                    <tr><td>🏊 Пул / дорожка</td><td>Зоны ответственности</td><td>Роли, отделы, системы</td></tr>
+                    <tr><td>⚪ Круг (Событие)</td><td>Начало / конец процесса</td></tr>
+                    <tr><td>📦 Прямоугольник (Задача)</td><td>Действие или работа</td></tr>
+                    <tr><td>🔶 Ромб (Шлюз)</td><td>Ветвление, объединение</td></tr>
+                    <tr><td>--- пунктир</td><td>Поток сообщений</td></tr>
+                    <tr><td>🏊 Пул / дорожка</td><td>Зоны ответственности</td></tr>
                 </tbody>
             </table>
         </div>
-        <div class="small-note">💡 Правило: задача должна быть атомарной, сложные процессы – в подпроцессы.</div>
+        <div class="small-note">💡 Задача должна быть атомарной, сложные процессы – в подпроцессы.</div>
     </div>
 
-    <!-- 4. Процесс системного анализа -->
+    <!-- 4. Процесс анализа -->
     <div class="card">
         <h2><span class="section-number">4</span> ЖИЗНЕННЫЙ ЦИКЛ АНАЛИЗА</h2>
-        <div class="two-columns" style="margin-top: 0.2rem;">
-            <div>
-                <ol style="margin-left: 1.3rem; list-style-type: decimal; line-height: 1.5;">
-                    <li><strong>Понять контекст</strong> – зачем, кто стейкхолдеры</li>
-                    <li><strong>Собрать требования</strong> – интервью, воркшопы</li>
-                    <li><strong>Анализ и моделирование</strong> – BPMN, Sequence, ERD</li>
-                </ol>
-            </div>
-            <div>
-                <ol start="4" style="margin-left: 1.3rem; list-style-type: decimal; line-height: 1.5;">
-                    <li><strong>Специфицировать</strong> – User Story, Use Cases, AC</li>
-                    <li><strong>Согласовать и передать</strong> – рефайнмент, планирование</li>
-                    <li><strong>Поддержка</strong> – уточнения, приёмка</li>
-                </ol>
-            </div>
+        <div>
+            <ol style="margin-left: 1.2rem; line-height: 1.5;">
+                <li><strong>Понять контекст</strong> – зачем, кто стейкхолдеры</li>
+                <li><strong>Собрать требования</strong> – интервью, воркшопы</li>
+                <li><strong>Анализ и моделирование</strong> – BPMN, Sequence, ERD</li>
+                <li><strong>Специфицировать</strong> – User Story, Use Cases, AC</li>
+                <li><strong>Согласовать и передать</strong> – рефайнмент, планирование</li>
+                <li><strong>Поддержка</strong> – уточнения, приёмка</li>
+            </ol>
         </div>
         <div class="badge" style="margin-top: 0.5rem;">⚙️ Главное: «Понять → задокументировать → проверить → передать»</div>
     </div>
@@ -360,52 +391,48 @@
     <!-- 5. Оценка и приоритеты -->
     <div class="card">
         <h2><span class="section-number">5</span> ОЦЕНКА ТРУДОЁМКОСТИ & ПРИОРИТЕТЫ</h2>
-        <div class="two-columns">
-            <div>
-                <h3>📏 Story Points / T-shirt sizing</h3>
-                <p>Относительная оценка: XS, S, M, L, XL.<br> <strong>Метод «Три точки»</strong></p>
-                <div class="formula">E = (O + 4×M + P) / 6</div>
-                <p><em>O – оптимистично, M – вероятно, P – пессимистично</em></p>
+        <div>
+            <h3>📏 Story Points / T-shirt sizing</h3>
+            <p>Относительная оценка: XS, S, M, L, XL.<br> <strong>Метод «Три точки»</strong></p>
+            <div class="formula">E = (O + 4×M + P) / 6</div>
+            <p><em>O – оптимистично, M – вероятно, P – пессимистично</em></p>
+            <h3>📊 Матрица Impact vs Effort</h3>
+            <div class="matrix-grid">
+                <div class="matrix-header">Impact \ Effort</div><div class="matrix-header">Low Effort</div><div class="matrix-header">High Effort</div>
+                <div class="matrix-header">High Impact</div><div class="matrix-cell">✨ Quick wins</div><div class="matrix-cell">⭐ Major projects</div>
+                <div class="matrix-header">Low Impact</div><div class="matrix-cell">🗄️ Fill-ins</div><div class="matrix-cell">⚠️ Thankless tasks</div>
             </div>
-            <div>
-                <h3>📊 Матрица Impact vs Effort</h3>
-                <div class="matrix-grid">
-                    <div></div><div class="matrix-header">Low Effort</div><div class="matrix-header">High Effort</div>
-                    <div class="matrix-header">High Impact</div><div class="matrix-cell">✨ Quick wins<br>(быстрые победы)</div><div class="matrix-cell">⭐ Major projects<br>(стратегия)</div>
-                    <div class="matrix-header">Low Impact</div><div class="matrix-cell">🗄️ Fill-ins<br>(заполнение)</div><div class="matrix-cell">⚠️ Thankless tasks<br>(благодарные задачи)</div>
-                </div>
-                <p class="small-note">Приоритет: Quick wins → Major projects → Fill-ins → Thankless</p>
-            </div>
+            <p class="small-note">Приоритет: Quick wins → Major projects → Fill-ins → Thankless</p>
         </div>
     </div>
 
-    <!-- 6. UML для системного аналитика -->
+    <!-- 6. UML -->
     <div class="card">
         <h2><span class="section-number">6</span> UML: КЛЮЧЕВЫЕ ДИАГРАММЫ ДЛЯ СА</h2>
         <div class="overflow-auto">
             <table>
-                <thead><tr><th>Диаграмма</th><th>Когда использовать</th><th>Пример</th></tr></thead>
+                <thead><tr><th>Диаграмма</th><th>Когда использовать</th></tr></thead>
                 <tbody>
-                    <tr><td>Use Case</td><td>Границы системы, актеры, цели</td><td>«Заказчик оформляет заказ»</td></tr>
-                    <tr><td>Sequence</td><td>Временна́я последовательность вызовов</td><td>Аутентификация через API шлюз</td></tr>
-                    <tr><td>Activity</td><td>Алгоритм, параллельные ветви</td><td>Оплата: карта / СБП / бонусы</td></tr>
-                    <tr><td>ERD (диаграмма сущность-связь)</td><td>Логическая модель данных</td><td>Пользователь → Заказы → Товары</td></tr>
+                    <tr><td>Use Case</td><td>Границы системы, актеры, цели</td></tr>
+                    <tr><td>Sequence</td><td>Временна́я последовательность вызовов</td></tr>
+                    <tr><td>Activity</td><td>Алгоритм, параллельные ветви</td></tr>
+                    <tr><td>ERD</td><td>Логическая модель данных</td></tr>
                 </tbody>
             </table>
         </div>
         <div class="small-note">💡 Простая диаграмма часто заменяет многостраничный текст.</div>
     </div>
 
-    <!-- 7. Шпаргалка по API (REST & документация) -->
+    <!-- 7. API -->
     <div class="card">
         <h2><span class="section-number">7</span> API: REST, КОДЫ, OPENAPI</h2>
         <h3>📡 Основные методы REST</h3>
         <div class="overflow-auto">
             <table>
-                <thead><tr><th>Метод</th><th>Назначение</th><th>Пример запроса</th></tr></thead>
+                <thead><tr><th>Метод</th><th>Назначение</th><th>Пример</th></tr></thead>
                 <tbody>
                     <tr><td>GET</td><td>Получение данных</td><td class="mono">GET /users</td></tr>
-                    <tr><td>POST</td><td>Создание ресурса</td><td class="mono">POST /users (body JSON)</td></tr>
+                    <tr><td>POST</td><td>Создание ресурса</td><td class="mono">POST /users</td></tr>
                     <tr><td>PUT</td><td>Полная замена</td><td class="mono">PUT /users/42</td></tr>
                     <tr><td>PATCH</td><td>Частичное обновление</td><td class="mono">PATCH /users/42</td></tr>
                     <tr><td>DELETE</td><td>Удаление</td><td class="mono">DELETE /users/42</td></tr>
@@ -414,54 +441,48 @@
         </div>
         <h3>🔢 Коды ответов</h3>
         <div class="two-columns">
-            <ul><li>200 OK – успех</li><li>201 Created – создано</li><li>400 Bad Request</li><li>401 Unauthorized</li></ul>
+            <ul><li>200 OK</li><li>201 Created</li><li>400 Bad Request</li><li>401 Unauthorized</li></ul>
             <ul><li>403 Forbidden</li><li>404 Not Found</li><li>422 Unprocessable</li><li>500 Internal Error</li></ul>
         </div>
         <h3>📐 Документация</h3>
-        <p><span class="badge">OpenAPI (Swagger)</span> – спецификация с примерами, схемами, типами данных. Обязательно для каждого интеграционного сценария.</p>
+        <p><span class="badge">OpenAPI (Swagger)</span> – спецификация с примерами, схемами, типами данных.</p>
         <p>✔ Параметры: path params, query params, body</p>
     </div>
 
-    <!-- 8. Ключевые метрики системного аналитика -->
+    <!-- 8. Метрики -->
     <div class="card">
         <h2><span class="section-number">8</span> МЕТРИКИ ЭФФЕКТИВНОСТИ</h2>
-        <div class="two-columns">
-            <ul class="skill-list">
-                <li><strong>📉 Уточнений</strong> – Кол-во вопросов на одно требование</li>
-                <li><strong>🧪 Покрытие тестами</strong> – >=80% критического пути</li>
-                <li><strong>⏱️ Lead time</strong> – от постановки до передачи в разработку</li>
-                <li><strong>🔄 Изменения после передачи</strong> – >10-15% = сигнал риска</li>
-                <li><strong>✅ Приёмка с первого раза</strong> – % требований без доработок</li>
-            </ul>
-        </div>
+        <ul class="skill-list">
+            <li><strong>📉 Уточнений</strong> – Кол-во вопросов на одно требование</li>
+            <li><strong>🧪 Покрытие тестами</strong> – >=80% критического пути</li>
+            <li><strong>⏱️ Lead time</strong> – от постановки до передачи в разработку</li>
+            <li><strong>🔄 Изменения после передачи</strong> – >10-15% = сигнал риска</li>
+            <li><strong>✅ Приёмка с первого раза</strong> – % требований без доработок</li>
+        </ul>
         <div class="small-note">Цель – предсказуемость и прозрачность требований для команды разработки.</div>
     </div>
 
-    <!-- 9. Чек-лист готовности требования к разработке -->
+    <!-- 9. Чек-лист DoR -->
     <div class="card">
         <h2><span class="section-number">9</span> ЧЕК-ЛИСТ: ГОТОВНОСТЬ ТРЕБОВАНИЯ (DoR)</h2>
-        <div class="two-columns">
-            <ul class="checklist-list">
-                <li>Понятная User Story или Use Case</li>
-                <li>Определены роли, пред-условия</li>
-                <li>Основной поток + альтернативы</li>
-                <li>Принятые критерии приемки (Given-When-Then)</li>
-            </ul>
-            <ul class="checklist-list">
-                <li>Нефункциональные требования (нагрузка / безопасность)</li>
-                <li>Нет конфликтов с другими требованиями</li>
-                <li>Оценено командой (разработка + тестирование)</li>
-                <li>Нет открытых вопросов к аналитику</li>
-            </ul>
-        </div>
-        <div class="badge" style="background:#e1f0fa;">✔ Перед передачей провести ревью с командой</div>
+        <ul class="checklist-list">
+            <li>Понятная User Story или Use Case</li>
+            <li>Определены роли, пред-условия</li>
+            <li>Основной поток + альтернативы</li>
+            <li>Принятые критерии приемки (Given-When-Then)</li>
+            <li>Нефункциональные требования (нагрузка / безопасность)</li>
+            <li>Нет конфликтов с другими требованиями</li>
+            <li>Оценено командой (разработка + тестирование)</li>
+            <li>Нет открытых вопросов к аналитику</li>
+        </ul>
+        <div class="badge">✔ Перед передачей провести ревью с командой</div>
     </div>
 
-    <!-- 10. Ключевые выводы / инсайты -->
+    <!-- 10. Выводы -->
     <div class="card">
         <h2><span class="section-number">10</span> КЛЮЧЕВЫЕ ВЫВОДЫ</h2>
-        <ul class="insight-list" style="list-style: none;">
-            <li>Сначала поймите «зачем?», потом углубляйтесь в «как?»</li>
+        <ul class="insight-list">
+            <li>Сначала поймите «зачем?», потом «как?»</li>
             <li>Документируйте не только успешный путь, но и обработку ошибок</li>
             <li>Одна диаграмма стоит тысячи слов, но критерии приёма обязательны</li>
             <li>Не будьте «передаточным звеном» — помогайте принимать решения</li>
@@ -469,12 +490,12 @@
             <li>Чистая документация = надёжная разработка</li>
         </ul>
         <hr>
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
             <span class="badge">🧠 Системное мышление</span>
             <span class="badge">📌 INVEST в User Stories</span>
             <span class="badge">⚡ BPMN + UML</span>
         </div>
-        <div class="small-note" style="margin-top: 1rem;">Памятка составлена по стандартам индустрии и лучшим практикам системного анализа.</div>
+        <div class="small-note" style="margin-top: 1rem;">Памятка адаптирована для мобильных устройств — листайте таблицы вправо.</div>
     </div>
     <footer>
         ⚙️ Шпаргалка системного аналитика — всегда под рукой | Актуализировано 2025
