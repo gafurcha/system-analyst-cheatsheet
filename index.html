@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Памятка системного аналитика | Мобильная версия</title>
+    <title>Системный аналитик — шпаргалка (мобильная)</title>
     <style>
         * {
             margin: 0;
@@ -13,53 +13,53 @@
 
         body {
             background: #eef2f5;
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.45;
             color: #1a2c3e;
-            padding: 1rem;
+            padding: 12px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 16px;
         }
 
         .card {
-            background: #ffffff;
-            border-radius: 1.25rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            padding: 1.25rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 18px;
             word-break: break-word;
         }
 
         h1 {
-            font-size: 1.75rem;
+            font-size: 1.7rem;
             font-weight: 700;
             background: linear-gradient(135deg, #1e466e, #2c5a8c);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 0.25rem;
+            margin-bottom: 6px;
             line-height: 1.2;
         }
 
         .sub {
             color: #4a627a;
             border-left: 3px solid #2c7cb6;
-            padding-left: 0.75rem;
-            font-size: 0.9rem;
-            margin-top: 0.2rem;
+            padding-left: 12px;
+            font-size: 0.85rem;
+            margin-top: 4px;
         }
 
         h2 {
             font-size: 1.35rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 3px solid #dce5ec;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #dce5ec;
             display: inline-block;
             color: #1c4e6e;
         }
@@ -67,226 +67,159 @@
         .section-number {
             background: #eef2fa;
             color: #1a6d9f;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            width: 1.8rem;
-            height: 1.8rem;
+            width: 1.7rem;
+            height: 1.7rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 40px;
-            margin-right: 0.5rem;
+            border-radius: 30px;
+            margin-right: 8px;
         }
 
         h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            margin: 1rem 0 0.5rem 0;
+            margin: 14px 0 8px 0;
             color: #2c5a74;
         }
 
-        /* единообразные списки – стандартные маркеры */
-        .standard-list {
+        /* Единый стиль для списков — кружочки */
+        .dot-list {
             list-style: disc;
-            padding-left: 1.2rem;
-            margin: 0.5rem 0;
+            padding-left: 1.3rem;
+            margin: 8px 0;
+        }
+        .dot-list li {
+            margin-bottom: 6px;
         }
 
-        .standard-list li {
-            margin-bottom: 0.4rem;
-        }
-
-        /* чек-лист со своими галочками */
-        .checklist-list {
+        /* Чек-лист — галочки */
+        .check-list {
             list-style: none;
             padding-left: 0;
-            margin: 0.5rem 0;
+            margin: 8px 0;
         }
-        .checklist-list li {
-            margin-bottom: 0.5rem;
+        .check-list li {
+            margin-bottom: 8px;
             display: flex;
             align-items: baseline;
-            gap: 0.5rem;
+            gap: 8px;
         }
-        .checklist-list li::before {
+        .check-list li::before {
             content: "✓";
             color: #1e7e34;
             font-weight: bold;
-            margin-right: 0.4rem;
             flex-shrink: 0;
         }
 
-        /* гибкие колонки */
-        .two-columns {
+        /* Двухколоночник — на телефоне в одну колонку */
+        .two-cols {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 0.5rem 0;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 8px 0;
         }
-
-        @media (max-width: 640px) {
-            body {
-                padding: 0.75rem;
-            }
-            .card {
-                padding: 1rem;
-            }
-            .two-columns {
+        @media (max-width: 600px) {
+            .two-cols {
                 grid-template-columns: 1fr;
-                gap: 0.75rem;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.25rem;
+                gap: 12px;
             }
         }
 
-        /* таблицы с горизонтальной прокруткой только если надо */
-        .overflow-auto {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 0.75rem 0;
+        /* Карточки для табличных данных (BPMN, UML, API) */
+        .grid-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 12px 0;
+        }
+        .item-card {
+            background: #f8fafd;
+            border-radius: 14px;
+            padding: 12px;
+            border-left: 4px solid #2c7cb6;
+        }
+        .item-card strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: #1c5a7a;
+        }
+        .item-card .desc {
+            font-size: 0.88rem;
+            color: #2c3e4e;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            min-width: 280px;
+        .method-list, .http-codes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 8px 0;
         }
-
-        th, td {
-            padding: 0.6rem 0.7rem;
-            border-bottom: 1px solid #e2e8f0;
-            text-align: left;
-            vertical-align: top;
-            word-break: break-word;
-            white-space: normal;
-        }
-
-        th {
-            background-color: #eef2f8;
-            font-weight: 600;
-        }
-
-        .mono {
-            font-family: 'SF Mono', 'Menlo', monospace;
-            background: #f4f7fc;
-            padding: 0.2rem 0.4rem;
-            border-radius: 8px;
-            font-size: 0.82rem;
-            word-break: break-all;
-            display: inline-block;
+        .method-item, .code-item {
+            background: #eef2f8;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: monospace;
         }
 
         .formula {
             background: #f1f5f9;
-            padding: 0.4rem 0.8rem;
-            border-radius: 16px;
+            padding: 6px 12px;
+            border-radius: 20px;
             font-family: monospace;
             font-size: 0.85rem;
             text-align: center;
             display: inline-block;
-            margin: 0.4rem 0;
-        }
-
-        /* матрица приоритетов адаптив */
-        .matrix-grid {
-            display: grid;
-            grid-template-columns: 100px 1fr 1fr;
-            gap: 6px;
-            margin: 0.8rem 0;
-            font-size: 0.85rem;
-        }
-
-        .matrix-header {
-            font-weight: 700;
-            background: #e2edf7;
-            padding: 0.4rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .matrix-cell {
-            padding: 0.5rem;
-            background: #fafcff;
-            border-radius: 12px;
-            border: 1px solid #e2edf2;
-        }
-
-        @media (max-width: 550px) {
-            .matrix-grid {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-            .matrix-header {
-                background: #cbdde9;
-            }
-            .matrix-cell {
-                border-left: 3px solid #2c7cb6;
-            }
+            margin: 6px 0;
         }
 
         .badge {
             background: #eef2fa;
-            padding: 0.2rem 0.7rem;
-            border-radius: 40px;
-            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
             font-weight: 500;
             display: inline-block;
-            margin: 0.2rem 0;
+            margin: 4px 0;
         }
 
         hr {
-            margin: 1rem 0;
+            margin: 12px 0;
             border: none;
             border-top: 1px solid #e0eaf1;
         }
 
         .small-note {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #4e6a7e;
-            margin-top: 0.5rem;
+            margin-top: 8px;
         }
 
         footer {
             text-align: center;
             font-size: 0.7rem;
             color: #5b748b;
-            margin-top: 1rem;
-            padding-top: 0.8rem;
+            margin-top: 12px;
+            padding-top: 10px;
             border-top: 1px solid #cbdde9;
-        }
-
-        .api-codes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem 0.7rem;
-            margin: 0.5rem 0;
-        }
-        .api-codes span {
-            background: #f0f4f9;
-            padding: 0.2rem 0.7rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-family: monospace;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <!-- шапка -->
     <div class="card">
         <h1>📋 ПАМЯТКА СИСТЕМНОГО АНАЛИТИКА</h1>
-        <div class="sub">Системное мышление, требования, интеграции и документация — компактный справочник</div>
+        <div class="sub">Системное мышление, требования, интеграции — без таблиц, только для телефона</div>
     </div>
 
     <!-- 1. Навыки -->
     <div class="card">
         <h2><span class="section-number">1</span> КЛЮЧЕВЫЕ НАВЫКИ</h2>
-        <ul class="standard-list">
+        <ul class="dot-list">
             <li><strong>Сбор требований</strong> — интервью, анкеты, DoR</li>
             <li><strong>Моделирование</strong> — BPMN, UML, ERD, DFD</li>
             <li><strong>Документирование</strong> — ТЗ, User Story, AC</li>
@@ -298,17 +231,16 @@
         </ul>
     </div>
 
-    <!-- 2. Требования: форматы и приоритеты (две колонки, на мобильных вертикально) -->
+    <!-- 2. Требования: форматы и приоритеты -->
     <div class="card">
         <h2><span class="section-number">2</span> ТРЕБОВАНИЯ: ФОРМАТЫ & ПРИОРИТЕТЫ</h2>
-        <div class="two-columns">
+        <div class="two-cols">
             <div>
                 <h3>📄 User Story</h3>
-                <div class="mono" style="display: block; margin-bottom: 0.4rem;">Как &lt;роль&gt;, я хочу &lt;действие&gt;, чтобы &lt;ценность&gt;</div>
+                <div class="badge" style="background:#eef2fa; display:block; text-align:center;">Как &lt;роль&gt;, я хочу &lt;действие&gt;, чтобы &lt;ценность&gt;</div>
                 <p class="small-note"><strong>Критерии приемки:</strong> Given… When… Then…</p>
-
                 <h3>📘 Use Case</h3>
-                <ul class="standard-list">
+                <ul class="dot-list">
                     <li>Актер, пред/пост-условия</li>
                     <li>Основной / альтернативный поток</li>
                     <li>Исключения</li>
@@ -316,15 +248,14 @@
             </div>
             <div>
                 <h3>🏷️ Типы требований</h3>
-                <ul class="standard-list">
+                <ul class="dot-list">
                     <li>Бизнес (зачем)</li>
                     <li>Функциональные (что делает)</li>
                     <li>Нефункциональные (производительность, безопасность)</li>
                     <li>Ограничения (стек, бюджет)</li>
                 </ul>
-
                 <h3>🎯 MoSCoW</h3>
-                <ul class="standard-list">
+                <ul class="dot-list">
                     <li><strong>M</strong> – Must have (критично)</li>
                     <li><strong>S</strong> – Should have (важно)</li>
                     <li><strong>C</strong> – Could have (можно позже)</li>
@@ -334,36 +265,29 @@
         </div>
     </div>
 
-    <!-- 3. BPMN (таблица с переносами) -->
+    <!-- 3. BPMN (вместо таблицы — карточки) -->
     <div class="card">
         <h2><span class="section-number">3</span> BPMN: БЫСТРЫЙ СПРАВОЧНИК</h2>
-        <div class="overflow-auto">
-            <table>
-                <thead>
-                    <tr><th>Элемент</th><th>Обозначение</th><th>Назначение</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>⚪ Круг</td><td>Событие</td><td>Начало / конец процесса</td></tr>
-                    <tr><td>📦 Прямоугольник с закруглениями</td><td>Задача (Task)</td><td>Действие, работа</td></tr>
-                    <tr><td>🔶 Ромб</td><td>Шлюз (Gateway)</td><td>Ветвление, параллель</td></tr>
-                    <tr><td>--- пунктир</td><td>Поток сообщений</td><td>Обмен между пулами</td></tr>
-                    <tr><td>🏊 Пул / дорожка</td><td>Зоны ответственности</td><td>Роли, отделы, системы</td></tr>
-                </tbody>
-            </table>
+        <div class="grid-cards">
+            <div class="item-card"><strong>⚪ Круг</strong><div class="desc">Событие — начало / конец процесса</div></div>
+            <div class="item-card"><strong>📦 Прямоугольник с закруглениями</strong><div class="desc">Задача (Task) — действие, работа</div></div>
+            <div class="item-card"><strong>🔶 Ромб</strong><div class="desc">Шлюз (Gateway) — ветвление, параллель</div></div>
+            <div class="item-card"><strong>--- пунктир</strong><div class="desc">Поток сообщений — обмен между пулами</div></div>
+            <div class="item-card"><strong>🏊 Пул / дорожка</strong><div class="desc">Зоны ответственности — роли, отделы, системы</div></div>
         </div>
         <div class="small-note">☑️ Правило: задача атомарная, сложные процессы — в подпроцессы.</div>
     </div>
 
-    <!-- 4. Жизненный цикл анализа -->
+    <!-- 4. Жизненный цикл -->
     <div class="card">
         <h2><span class="section-number">4</span> ЖИЗНЕННЫЙ ЦИКЛ АНАЛИЗА</h2>
-        <div class="two-columns">
-            <ul class="standard-list">
+        <div class="two-cols">
+            <ul class="dot-list">
                 <li>1. Понять контекст</li>
                 <li>2. Собрать требования</li>
                 <li>3. Анализ и моделирование</li>
             </ul>
-            <ul class="standard-list">
+            <ul class="dot-list">
                 <li>4. Специфицировать</li>
                 <li>5. Согласовать и передать</li>
                 <li>6. Поддержка</li>
@@ -375,74 +299,66 @@
     <!-- 5. Оценка и приоритеты -->
     <div class="card">
         <h2><span class="section-number">5</span> ОЦЕНКА ТРУДОЁМКОСТИ & ПРИОРИТЕТЫ</h2>
-        <div class="two-columns">
+        <div class="two-cols">
             <div>
-                <h3>📏 Story Points / T-shirt sizing</h3>
-                <p>XS, S, M, L, XL.<br> <strong>Метод «Три точки»</strong></p>
+                <h3>📏 Story Points / T-shirt</h3>
+                <p>XS, S, M, L, XL.</p>
+                <p><strong>Метод «Три точки»</strong></p>
                 <div class="formula">E = (O + 4×M + P) / 6</div>
-                <p class="small-note">O – оптимистично, M – вероятно, P – пессимистично</p>
+                <p class="small-note">O – оптимист, M – вероятно, P – пессимист</p>
             </div>
             <div>
                 <h3>📊 Матрица Impact vs Effort</h3>
-                <div class="matrix-grid">
-                    <div></div><div class="matrix-header">Low Effort</div><div class="matrix-header">High Effort</div>
-                    <div class="matrix-header">High Impact</div><div class="matrix-cell">✨ Quick wins</div><div class="matrix-cell">⭐ Major projects</div>
-                    <div class="matrix-header">Low Impact</div><div class="matrix-cell">🗄️ Fill-ins</div><div class="matrix-cell">⚠️ Thankless tasks</div>
-                </div>
+                <ul class="dot-list">
+                    <li><strong>✨ Quick wins</strong> — High Impact / Low Effort</li>
+                    <li><strong>⭐ Major projects</strong> — High Impact / High Effort</li>
+                    <li><strong>🗄️ Fill-ins</strong> — Low Impact / Low Effort</li>
+                    <li><strong>⚠️ Thankless tasks</strong> — Low Impact / High Effort</li>
+                </ul>
                 <p class="small-note">Приоритет: Quick wins → Major → Fill-ins → Thankless</p>
             </div>
         </div>
     </div>
 
-    <!-- 6. UML диаграммы (таблица) -->
+    <!-- 6. UML (карточки) -->
     <div class="card">
         <h2><span class="section-number">6</span> UML: КЛЮЧЕВЫЕ ДИАГРАММЫ</h2>
-        <div class="overflow-auto">
-            <table>
-                <thead><tr><th>Диаграмма</th><th>Когда использовать</th><th>Пример</th></tr></thead>
-                <tbody>
-                    <tr><td>Use Case</td><td>Границы системы, актеры</td><td>«Клиент оформляет заказ»</td></tr>
-                    <tr><td>Sequence</td><td>Временны́е вызовы</td><td>Аутентификация через API</td></tr>
-                    <tr><td>Activity</td><td>Алгоритм, параллели</td><td>Оплата: карта / СБП</td></tr>
-                    <tr><td>ERD</td><td>Логическая модель данных</td><td>Пользователь → Заказы</td></tr>
-                </tbody>
-            </table>
+        <div class="grid-cards">
+            <div class="item-card"><strong>📌 Use Case</strong><div class="desc">Границы системы, актеры, цели → «Клиент оформляет заказ»</div></div>
+            <div class="item-card"><strong>⏱️ Sequence</strong><div class="desc">Временная последовательность вызовов → аутентификация через API</div></div>
+            <div class="item-card"><strong>🔀 Activity</strong><div class="desc">Алгоритм, параллельные ветви → оплата: карта / СБП</div></div>
+            <div class="item-card"><strong>🗂️ ERD</strong><div class="desc">Логическая модель данных → Пользователь → Заказы → Товары</div></div>
         </div>
         <div class="small-note">💡 Одна диаграмма заменяет страницы текста.</div>
     </div>
 
-    <!-- 7. API (таблица методов + коды ответов) -->
+    <!-- 7. API (без таблиц) -->
     <div class="card">
         <h2><span class="section-number">7</span> API: REST, КОДЫ, OPENAPI</h2>
         <h3>📡 Методы REST</h3>
-        <div class="overflow-auto">
-            <table>
-                <thead><tr><th>Метод</th><th>Назначение</th><th>Пример</th></tr></thead>
-                <tbody>
-                    <tr><td>GET</td><td>Получение данных</td><td class="mono">GET /users</td></tr>
-                    <tr><td>POST</td><td>Создание ресурса</td><td class="mono">POST /users (body JSON)</td></tr>
-                    <tr><td>PUT</td><td>Полная замена</td><td class="mono">PUT /users/42</td></tr>
-                    <tr><td>PATCH</td><td>Частичное обновление</td><td class="mono">PATCH /users/42</td></tr>
-                    <tr><td>DELETE</td><td>Удаление</td><td class="mono">DELETE /users/42</td></tr>
-                </tbody>
-            </table>
+        <div class="method-list">
+            <span class="method-item"><strong>GET</strong> — получение (GET /users)</span>
+            <span class="method-item"><strong>POST</strong> — создание (POST /users + JSON)</span>
+            <span class="method-item"><strong>PUT</strong> — полная замена (PUT /users/42)</span>
+            <span class="method-item"><strong>PATCH</strong> — частичное обновление (PATCH /users/42)</span>
+            <span class="method-item"><strong>DELETE</strong> — удаление (DELETE /users/42)</span>
         </div>
-
         <h3>🔢 Коды ответов</h3>
-        <div class="api-codes">
-            <span>200 OK</span> <span>201 Created</span> <span>400 Bad Request</span> <span>401 Unauthorized</span>
-            <span>403 Forbidden</span> <span>404 Not Found</span> <span>422 Unprocessable</span> <span>500 Internal Error</span>
+        <div class="http-codes">
+            <span class="code-item">200 OK</span> <span class="code-item">201 Created</span>
+            <span class="code-item">400 Bad Request</span> <span class="code-item">401 Unauthorized</span>
+            <span class="code-item">403 Forbidden</span> <span class="code-item">404 Not Found</span>
+            <span class="code-item">422 Unprocessable</span> <span class="code-item">500 Internal Error</span>
         </div>
-
         <h3>📐 Документация</h3>
         <p><span class="badge">OpenAPI (Swagger)</span> – спецификация с примерами, схемами, типами данных.</p>
         <p>✔ Параметры: path params, query params, body</p>
     </div>
 
-    <!-- 8. Метрики эффективности -->
+    <!-- 8. Метрики -->
     <div class="card">
         <h2><span class="section-number">8</span> МЕТРИКИ ЭФФЕКТИВНОСТИ</h2>
-        <ul class="standard-list">
+        <ul class="dot-list">
             <li><strong>📉 Уточнений</strong> – кол-во вопросов на одно требование</li>
             <li><strong>🧪 Покрытие тестами</strong> – ≥80% критического пути</li>
             <li><strong>⏱️ Lead time</strong> – от постановки до передачи в разработку</li>
@@ -452,17 +368,17 @@
         <div class="small-note">Цель – предсказуемость и прозрачность требований для команды.</div>
     </div>
 
-    <!-- 9. Чек-лист готовности (DoR) — тут галочки -->
+    <!-- 9. Чек-лист DoR (галочки) -->
     <div class="card">
         <h2><span class="section-number">9</span> ЧЕК-ЛИСТ: ГОТОВНОСТЬ ТРЕБОВАНИЯ (DoR)</h2>
-        <div class="two-columns">
-            <ul class="checklist-list">
+        <div class="two-cols">
+            <ul class="check-list">
                 <li>Понятная User Story или Use Case</li>
                 <li>Определены роли, пред-условия</li>
                 <li>Основной поток + альтернативы</li>
                 <li>Принятые критерии приемки (Given-When-Then)</li>
             </ul>
-            <ul class="checklist-list">
+            <ul class="check-list">
                 <li>Нефункциональные требования</li>
                 <li>Нет конфликтов с другими требованиями</li>
                 <li>Оценено командой (разработка + тестирование)</li>
@@ -472,10 +388,10 @@
         <div class="badge">✔ Перед передачей провести ревью с командой</div>
     </div>
 
-    <!-- 10. Ключевые выводы – единообразные точки -->
+    <!-- 10. Выводы -->
     <div class="card">
         <h2><span class="section-number">10</span> КЛЮЧЕВЫЕ ВЫВОДЫ</h2>
-        <ul class="standard-list">
+        <ul class="dot-list">
             <li>Сначала поймите «зачем?», потом «как?»</li>
             <li>Документируйте не только успешный путь, но и обработку ошибок</li>
             <li>Одна диаграмма стоит тысячи слов, но критерии приёмки обязательны</li>
@@ -484,15 +400,15 @@
             <li>Чистая документация = надёжная разработка</li>
         </ul>
         <hr>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
             <span class="badge">🧠 Системное мышление</span>
             <span class="badge">📌 INVEST в User Stories</span>
             <span class="badge">⚡ BPMN + UML</span>
         </div>
-        <div class="small-note">Памятка адаптирована для мобильных устройств — таблицы пролистываются пальцем, текст переносится.</div>
+        <div class="small-note">📱 Версия без таблиц — всё помещается на любом телефоне.</div>
     </div>
     <footer>
-        📱 Шпаргалка системного аналитика — всегда под рукой
+        Шпаргалка системного аналитика — всегда под рукой
     </footer>
 </div>
 </body>
